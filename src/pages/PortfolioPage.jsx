@@ -103,9 +103,16 @@ const overallStats = [
     { label: 'Müşteri Memnuniyeti', value: 98, suffix: '%' },
 ];
 
+import SEO from '../components/SEO';
+
 export default function PortfolioPage() {
     return (
         <>
+            <SEO
+                title="Portföy - Başarı Hikayeleri"
+                description="127+ başarılı proje, %272 ortalama trafik artışı. E-ticaret, kurumsal ve SaaS projelerimizi inceleyin."
+                keywords="web tasarım referansları, portfolio, e-ticaret siteleri, kurumsal site örnekleri"
+            />
             <div className="container">
                 <div className="page-header">
                     <span className="page-label reveal">Portföy</span>

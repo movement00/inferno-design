@@ -16,9 +16,16 @@ import ScrollFillText from '../components/ScrollFillText';
 import CircularProgress from '../components/CircularProgress';
 import { Link } from 'react-router-dom';
 
+import SEO from '../components/SEO';
+
 export default function HomePage() {
     return (
         <>
+            <SEO
+                title="Ana Sayfa"
+                description="Inferno Design, işletmeler için yüksek performanslı web siteleri, SEO ve dijital pazarlama çözümleri sunan ödüllü bir ajanstır."
+                keywords="web tasarım, seo, dijital ajans, kurumsal web sitesi, e-ticaret"
+            />
             <Hero />
             <TrustBar />
             <MarqueeTicker />

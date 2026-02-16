@@ -3,6 +3,8 @@ import { useCart } from '../context/CartContext';
 import Testimonials from '../components/Testimonials';
 import ScrollFillText from '../components/ScrollFillText';
 
+import SEO from '../components/SEO';
+
 export default function ContactPage() {
     const { items, total } = useCart();
     const [formData, setFormData] = useState({
@@ -29,6 +31,11 @@ export default function ContactPage() {
 
     return (
         <>
+            <SEO
+                title="İletişim - Teklif Alın"
+                description="Projeniz için ücretsiz strateji görüşmesi başlatın. 24 saat içinde dönüş garantisi."
+                keywords="web tasarım teklif, iletişim, istanbul web ajansı contact"
+            />
             <div className="container">
                 <div className="page-header">
                     <span className="page-label reveal">İletişim</span>

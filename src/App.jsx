@@ -1,4 +1,6 @@
+import { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { CartProvider } from './context/CartContext';
 import AmbientBackground from './components/AmbientBackground';
 import Navbar from './components/Navbar';
@@ -13,10 +15,11 @@ import TimedOfferPopup from './components/TimedOfferPopup';
 import CookieBanner from './components/CookieBanner';
 import useRevealOnScroll from './hooks/useRevealOnScroll';
 
-import HomePage from './pages/HomePage';
-import PortfolioPage from './pages/PortfolioPage';
-import PricingPage from './pages/PricingPage';
-import ContactPage from './pages/ContactPage';
+// Lazy load pages for better performance
+const HomePage = lazy(() => import('./pages/HomePage'));
+const PortfolioPage = lazy(() => import('./pages/PortfolioPage'));
+const PricingPage = lazy(() => import('./pages/PricingPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
 
 function AppContent() {
   useRevealOnScroll();
@@ -28,12 +31,14 @@ function AppContent() {
       <ScrollToTop />
       <Navbar />
       <CartDrawer />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/portfolio" element={<PortfolioPage />} />
-        <Route path="/pricing" element={<PricingPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-      </Routes>
+      <Suspense fallback={<LoadingScreen />}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </Suspense>
       <Footer />
       <FloatingButtons />
       <ExitIntentPopup />
@@ -45,12 +50,16 @@ function AppContent() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <CartProvider>
-        <LoadingScreen />
-        <AppContent />
-      </CartProvider>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <CartProvider>
+          {/* Global Loading Screen handled by Suspense fallback mostly, keeping initial one separate if needed, 
+              but since we use Suspense inside, we can remove the global absolute LoadingScreen here or keep it for initial mount. 
+              Let's keep it simple. */}
+          <AppContent />
+        </CartProvider>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
 

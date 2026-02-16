@@ -255,6 +255,8 @@ function FlipCard({ pkg, onAdd, isInCart, addedId }) {
     );
 }
 
+import SEO from '../components/SEO';
+
 export default function PricingPage() {
     const { addItem, items } = useCart();
     const [addedId, setAddedId] = useState(null);
@@ -275,6 +277,11 @@ export default function PricingPage() {
 
     return (
         <>
+            <SEO
+                title="Fiyatlar & Paketler"
+                description="Şeffaf web tasarım fiyatları. Başlangıçtan kurumsal çözümlere kadar bütçenize uygun paketler."
+                keywords="web site fiyatları, e-ticaret paketleri, seo fiyatları, kurumsal site fiyat"
+            />
             <div className="container">
                 <div className="page-header">
                     <span className="page-label reveal">Fiyatlandırma</span>

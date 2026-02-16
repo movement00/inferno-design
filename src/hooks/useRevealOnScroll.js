@@ -15,21 +15,36 @@ export default function useRevealOnScroll() {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    observer.unobserve(entry.target); // Once revealed, stop observing
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        // Small timeout to ensure DOM is ready after route change
-        const timeoutId = setTimeout(() => {
-            const selectors = '.reveal, .reveal-left, .reveal-right, .reveal-scale';
-            const elements = document.querySelectorAll(selectors);
-            elements.forEach((el) => observer.observe(el));
-        }, 100);
+        const selectors = '.reveal, .reveal-left, .reveal-right, .reveal-scale';
 
+        // Function to find and observe elements
+        const observeElements = () => {
+            const elements = document.querySelectorAll(selectors);
+            if (elements.length > 0) {
+                elements.forEach((el) => observer.observe(el));
+                return true; // Elements found
+            }
+            return false; // No elements found yet
+        };
+
+        // Attempt to observe immediately
+        observeElements();
+
+        // Retry a few times in case of delayed rendering (e.g. lazy load chunks)
+        const timeouts = [];
+        [100, 300, 500, 1000].forEach(delay => {
+            timeouts.push(setTimeout(observeElements, delay));
+        });
+
+        // Cleanup
         return () => {
-            clearTimeout(timeoutId);
+            timeouts.forEach(clearTimeout);
             observer.disconnect();
         };
-    }, [pathname]); // Re-run when path changes
+    }, [pathname]);
 }

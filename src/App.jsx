@@ -13,7 +13,7 @@ import CartDrawer from './components/CartDrawer';
 import ExitIntentPopup from './components/ExitIntentPopup';
 import TimedOfferPopup from './components/TimedOfferPopup';
 import CookieBanner from './components/CookieBanner';
-import useRevealOnScroll from './hooks/useRevealOnScroll';
+import ErrorBoundary from './components/ErrorBoundary';
 
 // Lazy load pages for better performance
 const HomePage = lazy(() => import('./pages/HomePage'));
@@ -22,8 +22,6 @@ const PricingPage = lazy(() => import('./pages/PricingPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 
 function AppContent() {
-  useRevealOnScroll();
-
   return (
     <>
       <ScrollProgress />
@@ -31,7 +29,7 @@ function AppContent() {
       <ScrollToTop />
       <Navbar />
       <CartDrawer />
-      <Suspense fallback={<LoadingScreen />}>
+      <Suspense fallback={<LoadingScreen autoHide={false} />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
@@ -53,10 +51,9 @@ function App() {
     <HelmetProvider>
       <BrowserRouter>
         <CartProvider>
-          {/* Global Loading Screen handled by Suspense fallback mostly, keeping initial one separate if needed, 
-              but since we use Suspense inside, we can remove the global absolute LoadingScreen here or keep it for initial mount. 
-              Let's keep it simple. */}
-          <AppContent />
+          <ErrorBoundary>
+            <AppContent />
+          </ErrorBoundary>
         </CartProvider>
       </BrowserRouter>
     </HelmetProvider>

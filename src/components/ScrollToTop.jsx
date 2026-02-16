@@ -5,6 +5,11 @@ export default function ScrollToTop() {
     const { pathname } = useLocation();
 
     useEffect(() => {
+        // Prevent browser from restoring scroll position automatically
+        if (window.history.scrollRestoration) {
+            window.history.scrollRestoration = 'manual';
+        }
+
         window.scrollTo(0, 0);
     }, [pathname]);
 

@@ -4,8 +4,10 @@ import Testimonials from '../components/Testimonials';
 import ScrollFillText from '../components/ScrollFillText';
 
 import SEO from '../components/SEO';
+import useRevealOnScroll from '../hooks/useRevealOnScroll';
 
 export default function ContactPage() {
+    useRevealOnScroll();
     const { items, total } = useCart();
     const [formData, setFormData] = useState({
         name: '',

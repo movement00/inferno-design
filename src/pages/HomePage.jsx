@@ -17,8 +17,10 @@ import CircularProgress from '../components/CircularProgress';
 import { Link } from 'react-router-dom';
 
 import SEO from '../components/SEO';
+import useRevealOnScroll from '../hooks/useRevealOnScroll';
 
 export default function HomePage() {
+    useRevealOnScroll();
     return (
         <>
             <SEO

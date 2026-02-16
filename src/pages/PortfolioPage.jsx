@@ -104,8 +104,10 @@ const overallStats = [
 ];
 
 import SEO from '../components/SEO';
+import useRevealOnScroll from '../hooks/useRevealOnScroll';
 
 export default function PortfolioPage() {
+    useRevealOnScroll();
     return (
         <>
             <SEO

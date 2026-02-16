@@ -256,8 +256,10 @@ function FlipCard({ pkg, onAdd, isInCart, addedId }) {
 }
 
 import SEO from '../components/SEO';
+import useRevealOnScroll from '../hooks/useRevealOnScroll';
 
 export default function PricingPage() {
+    useRevealOnScroll();
     const { addItem, items } = useCart();
     const [addedId, setAddedId] = useState(null);
 

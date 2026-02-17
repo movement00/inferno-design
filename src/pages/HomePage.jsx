@@ -14,6 +14,7 @@ import PortfolioShowcase from '../components/PortfolioShowcase';
 import Timeline from '../components/Timeline';
 import ScrollFillText from '../components/ScrollFillText';
 import CircularProgress from '../components/CircularProgress';
+import InstagramShowcase from '../components/InstagramShowcase';
 import { Link } from 'react-router-dom';
 
 import SEO from '../components/SEO';
@@ -77,6 +78,7 @@ export default function HomePage() {
 
             <Testimonials />
             <Timeline />
+            <InstagramShowcase />
 
             {/* Another Scroll Fill Text */}
             <section style={{ padding: '80px 0' }}>

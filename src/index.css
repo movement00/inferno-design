@@ -1420,22 +1420,32 @@ section {
 
 .pricing-card {
   background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  /* Slightly brighter border */
   border-radius: var(--border-radius);
   padding: 48px 36px;
   position: relative;
-  transition: all 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* Bouncy transition */
   overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  /* Base shadow */
+  backdrop-filter: blur(10px);
 }
 
 .pricing-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-10px) scale(1.02);
+  /* More pronounced lift */
+  border-color: rgba(0, 242, 255, 0.4);
+  /* Stronger border color */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 242, 255, 0.15);
+  /* Glow effect */
 }
 
 .pricing-card.featured {
   border-color: var(--accent-cyan);
-  background: rgba(0, 242, 255, 0.03);
+  background: linear-gradient(135deg, rgba(0, 242, 255, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
+  box-shadow: 0 15px 40px rgba(0, 242, 255, 0.1);
 }
 
 .pricing-card.featured::before {
@@ -1531,10 +1541,11 @@ section {
 
 .pricing-guarantee {
   text-align: center;
-  margin-top: 80px;
+  margin-top: 120px;
   padding: 48px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   background: var(--bg-card);
+
 }
 
 .pricing-guarantee h3 {
@@ -3121,11 +3132,11 @@ footer {
 
 .flip-card-container {
   perspective: 1200px;
-  min-height: 620px;
+  min-height: 750px;
 }
 
 .flip-card-container.featured-container {
-  min-height: 680px;
+  min-height: 820px;
 }
 
 .flip-card {

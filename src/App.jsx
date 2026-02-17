@@ -20,6 +20,10 @@ const HomePage = lazy(() => import('./pages/HomePage'));
 const PortfolioPage = lazy(() => import('./pages/PortfolioPage'));
 const PricingPage = lazy(() => import('./pages/PricingPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const BlogPage = lazy(() => import('./pages/BlogPage'));
+const ServicesPage = lazy(() => import('./pages/ServicesPage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 function AppContent() {
   return (
@@ -35,6 +39,10 @@ function AppContent() {
           <Route path="/portfolio" element={<PortfolioPage />} />
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
       <Footer />

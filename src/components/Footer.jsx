@@ -22,8 +22,11 @@ export default function Footer() {
                     </div>
                     <div className="contact-col">
                         <h4>Keşfet</h4>
+                        <Link to="/about">Hakkımızda</Link>
+                        <Link to="/services">Hizmetler</Link>
                         <Link to="/portfolio">Portföy</Link>
                         <Link to="/pricing">Fiyatlar</Link>
+                        <Link to="/blog">Blog</Link>
                         <Link to="/contact">İletişim</Link>
                     </div>
                     <div className="contact-col">
@@ -31,11 +34,12 @@ export default function Footer() {
                         <a href="#" target="_blank" rel="noopener">Instagram</a>
                         <a href="#" target="_blank" rel="noopener">LinkedIn</a>
                         <a href="#" target="_blank" rel="noopener">Behance</a>
+                        <a href="#" target="_blank" rel="noopener">Dribbble</a>
                     </div>
                 </div>
 
                 <div className="footer-bottom">
-                    <p>© 2024 INFERNO DESIGN AGENCY.</p>
+                    <p>© 2026 INFERNO DESIGN AGENCY.</p>
                     <p>Tüm hakları saklıdır.</p>
                 </div>
             </div>

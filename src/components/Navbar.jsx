@@ -32,8 +32,11 @@ export default function Navbar() {
                 {/* Desktop Nav */}
                 <div className="nav-links desktop-nav">
                     <Link to="/" className={isActive('/')}>Ana Sayfa</Link>
+                    <Link to="/about" className={isActive('/about')}>Hakkımızda</Link>
+                    <Link to="/services" className={isActive('/services')}>Hizmetler</Link>
                     <Link to="/portfolio" className={isActive('/portfolio')}>Portföy</Link>
                     <Link to="/pricing" className={isActive('/pricing')}>Fiyatlar</Link>
+                    <Link to="/blog" className={isActive('/blog')}>Blog</Link>
                     <CartIcon />
                     <Link to="/contact" className={`cta-button ${isActive('/contact')}`} style={{ padding: '8px 16px' }}>Projeye Başla</Link>
                 </div>
@@ -68,16 +71,28 @@ export default function Navbar() {
                             <span className="mobile-link-num">01</span>
                             Ana Sayfa
                         </Link>
-                        <Link to="/portfolio" className={isActive('/portfolio')} onClick={() => setMenuOpen(false)}>
+                        <Link to="/about" className={isActive('/about')} onClick={() => setMenuOpen(false)}>
                             <span className="mobile-link-num">02</span>
+                            Hakkımızda
+                        </Link>
+                        <Link to="/services" className={isActive('/services')} onClick={() => setMenuOpen(false)}>
+                            <span className="mobile-link-num">03</span>
+                            Hizmetler
+                        </Link>
+                        <Link to="/portfolio" className={isActive('/portfolio')} onClick={() => setMenuOpen(false)}>
+                            <span className="mobile-link-num">04</span>
                             Portföy
                         </Link>
                         <Link to="/pricing" className={isActive('/pricing')} onClick={() => setMenuOpen(false)}>
-                            <span className="mobile-link-num">03</span>
+                            <span className="mobile-link-num">05</span>
                             Fiyatlar
                         </Link>
+                        <Link to="/blog" className={isActive('/blog')} onClick={() => setMenuOpen(false)}>
+                            <span className="mobile-link-num">06</span>
+                            Blog
+                        </Link>
                         <Link to="/contact" className={isActive('/contact')} onClick={() => setMenuOpen(false)}>
-                            <span className="mobile-link-num">04</span>
+                            <span className="mobile-link-num">07</span>
                             İletişim
                         </Link>
                     </div>

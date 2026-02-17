@@ -119,9 +119,28 @@ export default function ServicesPage() {
     return (
         <>
             <SEO
-                title="Hizmetler - Web Tasarım, SEO & Dijital Çözümler"
-                description="UI/UX tasarım, front-end geliştirme, e-ticaret, marka kimliği, SEO ve dijital pazarlama hizmetleri. Tam kapsamlı dijital çözümler."
-                keywords="web tasarım hizmetleri, seo hizmeti, e-ticaret geliştirme, marka kimliği tasarımı, dijital pazarlama"
+                title="Hizmetler - Web Tasarım, E-Ticaret & Dijital Pazarlama"
+                description="İşletmenizi büyütmek için tam kapsamlı dijital çözümler: UI/UX tasarım, özel yazılım geliştirme, SEO, e-ticaret altyapısı ve marka kimliği."
+                keywords="web tasarım hizmetleri, kurumsal seo danışmanlığı, e-ticaret sitesi kurma, marka tasarımı, google ads yönetimi"
+                canonical="/services"
+                structuredData={{
+                    "@context": "https://schema.org",
+                    "@type": "Service",
+                    "serviceType": "Digital Agency Services",
+                    "provider": { "@type": "Organization", "name": "Inferno Design" },
+                    "hasOfferCatalog": {
+                        "@type": "OfferCatalog",
+                        "name": "Dijital Hizmetler",
+                        "itemListElement": serviceDetails.map(service => ({
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": service.title,
+                                "description": service.description
+                            }
+                        }))
+                    }
+                }}
             />
 
             <div className="container">

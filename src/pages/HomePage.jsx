@@ -24,9 +24,10 @@ export default function HomePage() {
     return (
         <>
             <SEO
-                title="Ana Sayfa"
-                description="Inferno Design, işletmeler için yüksek performanslı web siteleri, SEO ve dijital pazarlama çözümleri sunan ödüllü bir ajanstır."
-                keywords="web tasarım, seo, dijital ajans, kurumsal web sitesi, e-ticaret"
+                title="Ana Sayfa - Dijital Dönüşüm Ajansı"
+                description="Inferno Design, işletmeler için yüksek performanslı web siteleri, SEO ve dijital pazarlama çözümleri sunan ödüllü bir ajanstır. Markanızı dijital dünyada güçlendirin."
+                keywords="web tasarım, seo, dijital ajans, kurumsal web sitesi, e-ticaret, istanbul web tasarım, profesyonel web sitesi"
+                canonical="/"
             />
             <Hero />
             <TrustBar />

@@ -280,9 +280,20 @@ export default function PricingPage() {
     return (
         <>
             <SEO
-                title="Fiyatlar & Paketler"
-                description="Şeffaf web tasarım fiyatları. Başlangıçtan kurumsal çözümlere kadar bütçenize uygun paketler."
-                keywords="web site fiyatları, e-ticaret paketleri, seo fiyatları, kurumsal site fiyat"
+                title="Şeffaf Fiyatlar - Web Tasarım & E-Ticaret Paketleri"
+                description="Gizli maliyet yok. Başlangıç, İşletme ve E-Ticaret paketleri ile ihtiyacınıza en uygun çözümü seçin. Aylık ödeme seçenekleri."
+                keywords="web sitesi fiyatları 2026, kurumsal site fiyat, e-ticaret sitesi maliyeti, seo paketi fiyatları"
+                canonical="/pricing"
+                structuredData={{
+                    "@context": "https://schema.org",
+                    "@type": "PriceList",
+                    "name": "Inferno Design Paketleri",
+                    "offers": [
+                        { "@type": "Offer", "name": "Başlangıç Paketi", "price": "14900", "priceCurrency": "TRY" },
+                        { "@type": "Offer", "name": "Gelişmiş Paket", "price": "24900", "priceCurrency": "TRY" },
+                        { "@type": "Offer", "name": "E-Ticaret Pro", "price": "39900", "priceCurrency": "TRY" }
+                    ]
+                }}
             />
             <div className="container">
                 <div className="page-header">

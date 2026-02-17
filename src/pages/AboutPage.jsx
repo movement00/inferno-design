@@ -93,9 +93,26 @@ export default function AboutPage() {
     return (
         <>
             <SEO
-                title="Hakkımızda - Ekibimiz & Hikayemiz"
-                description="Inferno Design'ın hikayesi, ekibi ve değerleri. 7+ yıllık deneyim, 127+ proje, %98 müşteri memnuniyeti."
-                keywords="inferno design hakkında, web tasarım ajansı istanbul, dijital ajans ekibi"
+                title="Hakkımızda - Yaratıcı Dijital Ajans Hikayesi"
+                description="Inferno Design, tutku ile çalışan 12 kişilik uzman ekibiyle markaların dijital dünyada parlamasını sağlar. 127+ mutlu müşteri, %98 memnuniyet."
+                keywords="inferno design hakkında, web tasarım ajansı ekibi, creative director istanbul, dijital ajans künyesi"
+                canonical="/about"
+                structuredData={{
+                    "@context": "https://schema.org",
+                    "@type": "AboutPage",
+                    "mainEntity": {
+                        "@type": "Organization",
+                        "name": "Inferno Design",
+                        "foundingDate": "2019",
+                        "url": "https://inferno-design.com/about",
+                        "employee": [
+                            { "@type": "Person", "name": "Emre Yıldız", "jobTitle": "Creative Director" },
+                            { "@type": "Person", "name": "Defne Arslan", "jobTitle": "Lead UI/UX Designer" },
+                            { "@type": "Person", "name": "Burak Koç", "jobTitle": "Senior Full-Stack Developer" },
+                            { "@type": "Person", "name": "Sude Aydın", "jobTitle": "SEO & Growth Strategist" }
+                        ]
+                    }
+                }}
             />
 
             {/* Page Header */}

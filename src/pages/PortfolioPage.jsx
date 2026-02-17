@@ -111,9 +111,29 @@ export default function PortfolioPage() {
     return (
         <>
             <SEO
-                title="Portföy - Başarı Hikayeleri"
-                description="127+ başarılı proje, %272 ortalama trafik artışı. E-ticaret, kurumsal ve SaaS projelerimizi inceleyin."
-                keywords="web tasarım referansları, portfolio, e-ticaret siteleri, kurumsal site örnekleri"
+                title="Portföy - 127+ Başarı Hikayesi"
+                description="İnandığımızı yapıyoruz. Shopify mağazaları, kurumsal siteler ve SaaS platformları projelerimizi inceleyin. Ortalama %272 trafik artışı."
+                keywords="web tasarım referansları, portfolio, e-ticaret siteleri, kurumsal site örnekleri, mobil uygulama tasarımı"
+                canonical="/portfolio"
+                structuredData={{
+                    "@context": "https://schema.org",
+                    "@type": "CollectionPage",
+                    "name": "Inferno Design Portföyü",
+                    "description": "Tamamlanan web tasarım ve dijital pazarlama projeleri.",
+                    "mainEntity": {
+                        "@type": "ItemList",
+                        "itemListElement": [
+                            { "@type": "CreativeWork", "name": "NOVA E-Ticaret" },
+                            { "@type": "CreativeWork", "name": "Vortex SaaS" },
+                            { "@type": "CreativeWork", "name": "Lumina App" },
+                            { "@type": "CreativeWork", "name": "Aura Cosmetics" },
+                            { "@type": "CreativeWork", "name": "Flux Capital" },
+                            { "@type": "CreativeWork", "name": "Zenith Architecture" },
+                            { "@type": "CreativeWork", "name": "Pulse Energy" },
+                            { "@type": "CreativeWork", "name": "Echo Bistro" }
+                        ]
+                    }
+                }}
             />
             <div className="container">
                 <div className="page-header">

@@ -6,8 +6,8 @@ export default function NotFoundPage() {
         <>
             <SEO
                 title="404 - Sayfa Bulunamadı"
-                description="Aradığınız sayfa bulunamadı. Ana sayfaya dönün veya iletişime geçin."
-                keywords="404, sayfa bulunamadı"
+                description="Aradığınız sayfa bulunamadı. Lütfen ana sayfaya dönün."
+                noindex={true}
             />
             <div className="container">
                 <div className="not-found-page">

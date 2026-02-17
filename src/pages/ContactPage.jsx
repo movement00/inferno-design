@@ -34,9 +34,24 @@ export default function ContactPage() {
     return (
         <>
             <SEO
-                title="İletişim - Teklif Alın"
-                description="Projeniz için ücretsiz strateji görüşmesi başlatın. 24 saat içinde dönüş garantisi."
-                keywords="web tasarım teklif, iletişim, istanbul web ajansı contact"
+                title="İletişim - Projenizi Başlatalım"
+                description="Hemen teklif alın. 24 saat içinde dönüş, ücretsiz ilk strateji görüşmesi. İstanbul Levent ofisimizde kahveye bekleriz."
+                keywords="web tasarım teklif al, dijital ajans iletişim, istanbul web tasarım firması telefon"
+                canonical="/contact"
+                structuredData={{
+                    "@context": "https://schema.org",
+                    "@type": "ContactPage",
+                    "mainEntity": {
+                        "@type": "Organization",
+                        "name": "Inferno Design",
+                        "contactPoint": {
+                            "@type": "ContactPoint",
+                            "telephone": "+90-212-XXX-XXXX",
+                            "contactType": "sales",
+                            "availableLanguage": "Turkish"
+                        }
+                    }
+                }}
             />
             <div className="container">
                 <div className="page-header">

@@ -2010,84 +2010,7 @@ footer {
   line-height: 1.7;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
 
-  .contact-form-section {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-
-  .nav-links {
-    gap: 16px;
-  }
-
-  .pricing-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .tech-bars {
-    grid-template-columns: 1fr;
-  }
-
-  .circular-stats {
-    gap: 32px;
-  }
-
-  .showcase-card {
-    width: 320px;
-  }
-
-  .timeline {
-    padding-left: 32px;
-  }
-
-  .floating-buttons {
-    bottom: 20px;
-    right: 20px;
-  }
-
-  .project-detail {
-    grid-template-columns: 1fr;
-  }
-
-  .project-visual {
-    height: 240px;
-  }
-
-  .project-metrics {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .addons-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .cart-drawer {
-    width: 100%;
-  }
-
-  .popup-card {
-    max-width: 90vw;
-    margin: 20px;
-  }
-
-  .campaign-card {
-    flex-direction: column;
-  }
-}
 
 /* ===== Cart Icon ===== */
 .cart-icon-btn {
@@ -3817,11 +3740,11 @@ footer {
     gap: 20px;
   }
 
-  /* Flip Card Mobile Fix */
+  /* Flip Card Mobile Fix — Use display toggle instead of 3D flip */
   .flip-card-container {
     min-height: auto !important;
-    perspective: 1000px;
     height: auto !important;
+    perspective: none;
   }
 
   .flip-card-container.featured-container {
@@ -3832,26 +3755,48 @@ footer {
     min-height: auto !important;
     height: auto !important;
     position: relative;
-    transform-style: preserve-3d;
+    transform-style: flat !important;
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .flip-card.flipped {
+    transform: none !important;
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    position: relative !important;
+    width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+    backface-visibility: visible !important;
+    -webkit-backface-visibility: visible !important;
+    transform: none !important;
   }
 
   .flip-card-front {
-    position: relative !important;
-    min-height: auto !important;
-    height: auto !important;
+    display: block;
   }
 
   .flip-card-back {
-    position: absolute !important;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    min-height: auto !important;
+    display: none;
+  }
+
+  .flip-card.flipped .flip-card-front {
+    display: none;
+  }
+
+  .flip-card.flipped .flip-card-back {
+    display: block;
   }
 
   .pricing-card {
     padding: 28px 20px;
+  }
+
+  .pricing-card h3 {
+    font-size: 22px !important;
   }
 
   .pricing-amount {
@@ -3874,6 +3819,10 @@ footer {
 
   .pricing-note {
     font-size: 11px;
+  }
+
+  .pricing-features {
+    margin-bottom: 20px;
   }
 
   .pricing-features li {
@@ -4417,437 +4366,6 @@ footer {
 }
 
 
-
-/* Mobile styles wrapper */
-@media (max-width: 768px) {
-
-  .navbar .container {
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  /* — Hero — */
-  .hero-section {
-    padding: 100px 0 60px;
-  }
-
-  .hero-subtitle {
-    font-size: 12px !important;
-  }
-
-  /* — Hook Cards — */
-  .hook-cards {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  /* — Marquee — */
-  .marquee-ticker {
-    font-size: 12px;
-    padding: 12px 0;
-  }
-
-  /* — Stats — */
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-
-  /* — Services — */
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  /* — Tech Stack — */
-  .tech-bars {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  /* — Circular Progress — */
-  .circular-stats {
-    gap: 24px;
-    justify-content: space-around;
-  }
-
-  .circular-stat svg {
-    width: 90px;
-    height: 90px;
-  }
-
-  .circular-stat .circle-label {
-    font-size: 20px;
-  }
-
-  /* — Portfolio Showcase (Homepage) — */
-  .showcase-card {
-    width: 300px;
-  }
-
-  .showcase-card .sc-image {
-    height: 180px;
-  }
-
-  .showcase-card h3 {
-    font-size: 15px;
-  }
-
-  /* — Scroll Fill Text — */
-  .scroll-fill-text {
-    font-size: clamp(22px, 5vw, 40px);
-  }
-
-  /* — Timeline — */
-  .timeline {
-    padding-left: 28px;
-  }
-
-  .timeline-item {
-    padding-left: 24px;
-    padding-bottom: 32px;
-  }
-
-  .timeline-item h3 {
-    font-size: 16px;
-  }
-
-  /* — Parallax — */
-  .parallax-section {
-    padding: 60px 0;
-  }
-
-  .parallax-line-1,
-  .parallax-line-2 {
-    font-size: clamp(32px, 6vw, 64px);
-  }
-
-  .parallax-line-3 {
-    font-size: clamp(20px, 4vw, 40px);
-  }
-
-  /* — Pricing — */
-  .pricing-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .flip-card-container {
-    min-height: auto !important;
-    perspective: 1000px;
-  }
-
-  .flip-card-container.featured-container {
-    min-height: auto !important;
-  }
-
-  .flip-card {
-    min-height: auto;
-    position: relative;
-  }
-
-  .flip-card-front,
-  .flip-card-back {
-    position: relative;
-    min-height: auto;
-  }
-
-  .flip-card-back {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  .pricing-card {
-    padding: 32px 24px;
-  }
-
-  .pricing-amount {
-    font-size: 36px;
-  }
-
-  .pricing-badge {
-    right: -28px;
-    padding: 5px 36px;
-    font-size: 10px;
-  }
-
-  .pricing-features li {
-    font-size: 13px;
-    padding: 8px 0;
-  }
-
-  .pricing-guarantee {
-    margin-top: 40px;
-    padding: 32px 20px;
-  }
-
-  .pricing-guarantee h3 {
-    font-size: 20px;
-  }
-
-  /* — Add-ons — */
-  .addons-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .addon-card {
-    padding: 20px;
-  }
-
-  .addon-price {
-    font-size: 20px;
-  }
-
-  /* — Integration Banner — */
-  .integration-banner {
-    padding: 28px 20px;
-  }
-
-  .integration-icons-row {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-
-  .integration-icon-card {
-    padding: 12px 8px;
-  }
-
-  .integration-icon-card span {
-    font-size: 22px;
-    margin-bottom: 4px;
-  }
-
-  .integration-icon-card strong {
-    font-size: 9px;
-  }
-
-  .integration-tip {
-    font-size: 12px !important;
-    padding: 12px 14px;
-  }
-
-  /* — Comparison Table — */
-  .comparison-table {
-    font-size: 12px;
-    min-width: 560px;
-  }
-
-  .comparison-table th,
-  .comparison-table td {
-    padding: 8px 10px;
-  }
-
-  /* — Portfolio Page — */
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .project-detail {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    margin-bottom: 40px;
-    padding-bottom: 40px;
-  }
-
-  .project-detail.reverse {
-    direction: ltr;
-  }
-
-  .project-visual {
-    height: 200px;
-  }
-
-  .project-info h3 {
-    font-size: 20px;
-  }
-
-  .project-cs {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .project-metrics {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-
-  .metric-value {
-    font-size: 18px;
-  }
-
-  .project-result-badge {
-    font-size: 12px;
-    padding: 10px 16px;
-  }
-
-  /* — Contact — */
-  .contact-form-section {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .contact-form {
-    padding: 28px 20px;
-  }
-
-  .contact-form h3 {
-    font-size: 18px;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-
-  .cart-summary-banner {
-    flex-direction: column;
-    gap: 16px;
-    text-align: center;
-  }
-
-  .contact-socials {
-    gap: 8px;
-  }
-
-  .social-link {
-    font-size: 11px;
-    padding: 6px 12px;
-  }
-
-  /* — FAQ — */
-  .faq-question {
-    font-size: 14px;
-    padding: 14px 0;
-  }
-
-  .faq-answer p {
-    font-size: 13px;
-  }
-
-  /* — CTA Section — */
-  .cta-section {
-    padding: 60px 0;
-  }
-
-  .cta-section h2 {
-    font-size: clamp(24px, 5vw, 36px) !important;
-  }
-
-  .cta-button.large {
-    padding: 14px 28px;
-    font-size: 13px;
-  }
-
-  /* — Campaign Card — */
-  .campaign-card {
-    flex-direction: column;
-    padding: 28px 20px;
-    text-align: center;
-  }
-
-  .campaign-card-content h3 {
-    font-size: 22px;
-  }
-
-  .campaign-percentage {
-    font-size: 64px;
-  }
-
-  .campaign-sub-text {
-    font-size: 18px;
-  }
-
-  /* — Cart Drawer — */
-  .cart-drawer {
-    width: 100%;
-  }
-
-  .cart-header {
-    padding: 16px;
-  }
-
-  .cart-items {
-    padding: 12px 16px;
-  }
-
-  .cart-footer {
-    padding: 16px;
-  }
-
-  /* — Popups — */
-  .popup-card {
-    max-width: 92vw;
-    margin: 12px;
-    padding: 28px 20px;
-  }
-
-  .popup-card h3 {
-    font-size: 22px;
-  }
-
-  .campaign-discount {
-    font-size: 36px;
-  }
-
-  .countdown-num {
-    font-size: 28px;
-  }
-
-  .countdown-sep {
-    font-size: 24px;
-  }
-
-  /* — Cookie Banner — */
-  .cookie-banner {
-    flex-direction: column;
-    text-align: center;
-    padding: 12px 16px;
-    gap: 12px;
-  }
-
-  .cookie-text {
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  /* — Floating Buttons — */
-  .floating-buttons {
-    bottom: 16px;
-    right: 16px;
-    gap: 8px;
-  }
-
-  .float-btn {
-    width: 48px;
-    height: 48px;
-    font-size: 20px;
-  }
-
-  /* — Testimonials — */
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  /* — Loading Screen — */
-  .loading-screen h1 {
-    font-size: 28px;
-  }
-
-  /* — UrgencyBanner — */
-  .urgency-banner {
-    padding: 10px 16px;
-  }
-
-  .urgency-banner .urgency-text {
-    font-size: 11px;
-    text-align: center;
-  }
-
-
-}
 
 /* ===== About Page ===== */
 .about-stats-grid {
@@ -5650,41 +5168,5 @@ footer {
 
   .desktop-nav a {
     font-size: 11px;
-  }
-}
-
-/* ===== Small phones ===== */
-@media (max-width: 400px) {
-  .container {
-    padding: 0 12px;
-  }
-
-  .pricing-card {
-    padding: 24px 16px;
-  }
-
-  .pricing-amount {
-    font-size: 30px;
-  }
-
-  .integration-icons-row {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-  }
-
-  .project-metrics {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .campaign-percentage {
-    font-size: 48px;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
-  .cart-icon-btn {
-    font-size: 18px;
   }
 }

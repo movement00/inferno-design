@@ -49,6 +49,27 @@ footer {
   padding-top: 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 12px;
   color: #666;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.footer-legal a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-legal a:hover {
+  color: var(--accent-cyan);
+}
+
+.footer-legal span {
+  opacity: 0.5;
 }

@@ -503,7 +503,8 @@ export default function PricingPage() {
                     <p className="reveal" style={{ transitionDelay: '0.15s' }}>
                         Projenizi anlatın, ihtiyacınıza özel bir öneri sunalım. İlk strateji görüşmesi tamamen ücretsizdir.
                     </p>
-                    <div className="reveal" style={{ transitionDelay: '0.3s' }}>
+                    <div className="reveal" style={{ transitionDelay: '0.3s', display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                        <Link to="/calculator" className="cta-button large">Fiyat Hesapla</Link>
                         <Link to="/contact" className="cta-button large pulse">Ücretsiz Danışmanlık Al</Link>
                     </div>
                 </div>

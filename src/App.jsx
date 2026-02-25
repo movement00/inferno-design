@@ -25,6 +25,10 @@ const AboutPage = lazy(() => import('./pages/AboutPage'));
 const BlogPage = lazy(() => import('./pages/BlogPage'));
 const ServicesPage = lazy(() => import('./pages/ServicesPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
+const BlogDetailPage = lazy(() => import('./pages/BlogDetailPage'));
+const PrivacyPage = lazy(() => import('./pages/PrivacyPage'));
+const TermsPage = lazy(() => import('./pages/TermsPage'));
+const CalculatorPage = lazy(() => import('./pages/CalculatorPage'));
 
 function AppContent() {
   return (
@@ -44,6 +48,10 @@ function AppContent() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/services" element={<ServicesPage />} />
+            <Route path="/blog/:slug" element={<BlogDetailPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/calculator" element={<CalculatorPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>

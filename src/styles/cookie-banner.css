@@ -1,0 +1,138 @@
+/* ===== Cookie Banner (KVKK) ===== */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: rgba(10, 10, 15, 0.97);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px;
+  animation: cookieSlideUp 0.5s ease-out;
+}
+
+@keyframes cookieSlideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.cookie-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cookie-text h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.cookie-text p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+.cookie-link {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cookie-details {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cookie-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  flex: 1;
+  min-width: 200px;
+}
+
+.cookie-option input[type="checkbox"] {
+  margin-top: 3px;
+  accent-color: var(--primary);
+  width: 16px;
+  height: 16px;
+}
+
+.cookie-option strong {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.cookie-option span {
+  display: block;
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.cookie-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.cookie-btn-text {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 12px;
+  cursor: pointer;
+  padding: 8px 12px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.3s;
+}
+
+.cookie-btn-text:hover {
+  color: var(--text-primary);
+}
+
+.cookie-btn-outline {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-secondary);
+  padding: 10px 20px;
+  border-radius: 100px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.3s;
+}
+
+.cookie-btn-outline:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .cookie-banner {
+    padding: 16px;
+  }
+  .cookie-details {
+    flex-direction: column;
+  }
+  .cookie-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cookie-actions button,
+  .cookie-actions .cta-button {
+    text-align: center;
+  }
+}

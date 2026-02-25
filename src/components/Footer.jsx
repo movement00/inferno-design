@@ -26,6 +26,7 @@ export default function Footer() {
                         <Link to="/services">Hizmetler</Link>
                         <Link to="/portfolio">Portföy</Link>
                         <Link to="/pricing">Fiyatlar</Link>
+                        <Link to="/calculator">Fiyat Hesapla</Link>
                         <Link to="/blog">Blog</Link>
                         <Link to="/contact">İletişim</Link>
                     </div>
@@ -40,7 +41,11 @@ export default function Footer() {
 
                 <div className="footer-bottom">
                     <p>© 2026 INFERNO DESIGN AGENCY.</p>
-                    <p>Tüm hakları saklıdır.</p>
+                    <div className="footer-legal">
+                        <Link to="/privacy">Gizlilik Politikası</Link>
+                        <span>·</span>
+                        <Link to="/terms">Kullanım Şartları</Link>
+                    </div>
                 </div>
             </div>
         </footer>

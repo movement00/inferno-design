@@ -3,10 +3,11 @@
     "home": "Ana Sayfa",
     "about": "Hakkımızda",
     "services": "Hizmetler",
-    "portfolio": "Portfolyo",
-    "pricing": "Fiyatlandırma",
+    "portfolio": "Portföy",
+    "pricing": "Fiyatlar",
     "blog": "Blog",
-    "contact": "İletişim"
+    "contact": "İletişim",
+    "cta": "Projeye Başla"
   },
   "hero": {
     "title1": "ATEŞLE",
@@ -43,8 +44,17 @@
     "successMessage": "En kısa sürede size dönüş yapacağız."
   },
   "footer": {
-    "cta": "BİR SONRAKİ PROJENİZ",
-    "ctaHighlight": "BURADA BAŞLIYOR.",
+    "cta": "Markanızı",
+    "ctaHighlight": "Alevlendirelim.",
+    "contactTitle": "İletişim",
+    "officeTitle": "Ofis",
+    "officeAddress1": "Levent, İstanbul",
+    "officeAddress2": "Teknoloji Vadisi, No: 42",
+    "exploreTitle": "Keşfet",
+    "socialTitle": "Sosyal",
+    "priceCalc": "Fiyat Hesapla",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Kullanım Şartları",
     "rights": "Tüm hakları saklıdır."
   },
   "theme": {

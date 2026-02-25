@@ -6,7 +6,8 @@
     "portfolio": "Portfolio",
     "pricing": "Pricing",
     "blog": "Blog",
-    "contact": "Contact"
+    "contact": "Contact",
+    "cta": "Start Project"
   },
   "hero": {
     "title1": "DESIGN WITH",
@@ -43,8 +44,17 @@
     "successMessage": "We'll get back to you as soon as possible."
   },
   "footer": {
-    "cta": "YOUR NEXT PROJECT",
-    "ctaHighlight": "STARTS HERE.",
+    "cta": "Let's Ignite",
+    "ctaHighlight": "Your Brand.",
+    "contactTitle": "Contact",
+    "officeTitle": "Office",
+    "officeAddress1": "Levent, Istanbul",
+    "officeAddress2": "Tech Valley, No: 42",
+    "exploreTitle": "Explore",
+    "socialTitle": "Social",
+    "priceCalc": "Price Calculator",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
     "rights": "All rights reserved."
   },
   "theme": {

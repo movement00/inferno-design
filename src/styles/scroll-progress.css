@@ -1,0 +1,11 @@
+/* ===== Scroll Progress Bar ===== */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-yellow));
+  z-index: 200;
+  transition: width 0.1s linear;
+  box-shadow: var(--glow-cyan);
+}

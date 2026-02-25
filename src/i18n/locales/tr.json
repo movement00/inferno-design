@@ -1,0 +1,58 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "services": "Hizmetler",
+    "portfolio": "Portfolyo",
+    "pricing": "Fiyatlandırma",
+    "blog": "Blog",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "title1": "ATEŞLE",
+    "title2": "TASARLIYORUZ.",
+    "subtitle": "Sadece web sitesi yapmıyoruz — markaları dijital dünyada alevlendiriyoruz. Yaratıcı tasarım ve teknolojiyi birleştiriyoruz."
+  },
+  "common": {
+    "getQuote": "ÜCRETSİZ TEKLİF AL",
+    "viewPortfolio": "PORTFOLYOYU GÖR",
+    "contactUs": "İLETİŞİME GEÇ",
+    "readMore": "Devamını Oku",
+    "close": "Kapat",
+    "subscribe": "Abone Ol",
+    "send": "Gönder",
+    "loading": "Yükleniyor..."
+  },
+  "contact": {
+    "title": "PROJENİZİ",
+    "titleHighlight": "ANLATINIZ.",
+    "subtitle": "Formu doldurun, 24 saat içinde size özel bir strateji önerisiyle dönelim. İlk görüşme tamamen ücretsizdir.",
+    "formTitle": "PROJENİZİ BAŞLATIN",
+    "formSubtitle": "Aşağıdaki formu doldurun, size özel teklifimizi hazırlayalım.",
+    "name": "Adınız",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "company": "Şirket / Marka",
+    "projectType": "Proje Türü",
+    "budget": "Bütçe Aralığı",
+    "timeline": "Zaman Çizelgesi",
+    "hearAbout": "Bizi nereden duydunuz?",
+    "message": "Proje Detayları",
+    "selectPlaceholder": "Seçiniz",
+    "successTitle": "MESAJINIZ ALINDI!",
+    "successMessage": "En kısa sürede size dönüş yapacağız."
+  },
+  "footer": {
+    "cta": "BİR SONRAKİ PROJENİZ",
+    "ctaHighlight": "BURADA BAŞLIYOR.",
+    "rights": "Tüm hakları saklıdır."
+  },
+  "theme": {
+    "dark": "Karanlık",
+    "light": "Aydınlık"
+  },
+  "lang": {
+    "tr": "Türkçe",
+    "en": "English"
+  }
+}

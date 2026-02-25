@@ -1,0 +1,71 @@
+/* ===== Scroll Fill Progress Bars ===== */
+.tech-stack-section {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.tech-bars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 60px;
+  margin-top: 60px;
+}
+
+.tech-bar-item {
+  position: relative;
+}
+
+.tech-bar-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.tech-bar-name {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tech-bar-value {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 14px;
+  color: var(--accent-cyan);
+}
+
+.tech-bar-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.tech-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-yellow));
+  width: 0%;
+  transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--glow-cyan);
+  position: relative;
+}
+
+.tech-bar-fill::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-yellow);
+  box-shadow: var(--glow-yellow);
+  opacity: 0;
+  transition: opacity 0.3s 1.2s;
+}
+
+.tech-bar-fill.filled::after {
+  opacity: 1;
+}

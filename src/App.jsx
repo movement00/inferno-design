@@ -2,6 +2,7 @@ import { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { CartProvider } from './context/CartContext';
+import { ThemeProvider } from './context/ThemeContext';
 import AmbientBackground from './components/AmbientBackground';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -34,16 +35,18 @@ function AppContent() {
       <Navbar />
       <CartDrawer />
       <Suspense fallback={<LoadingScreen autoHide={false} />}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/portfolio" element={<PortfolioPage />} />
-          <Route path="/pricing" element={<PricingPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
+        <main id="main-content">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
+            <Route path="/pricing" element={<PricingPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </main>
       </Suspense>
       <Footer />
       <FloatingButtons />
@@ -58,11 +61,16 @@ function App() {
   return (
     <HelmetProvider>
       <BrowserRouter>
-        <CartProvider>
-          <ErrorBoundary>
-            <AppContent />
-          </ErrorBoundary>
-        </CartProvider>
+        <ThemeProvider>
+          <CartProvider>
+            <ErrorBoundary>
+              <a className="skip-to-content" href="#main-content">
+                İçeriğe Geç
+              </a>
+              <AppContent />
+            </ErrorBoundary>
+          </CartProvider>
+        </ThemeProvider>
       </BrowserRouter>
     </HelmetProvider>
   );

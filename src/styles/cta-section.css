@@ -1,0 +1,18 @@
+/* ===== CTA Section ===== */
+.cta-section {
+  text-align: center;
+  padding: 100px 0;
+  position: relative;
+}
+
+.cta-section h2 {
+  font-size: clamp(32px, 5vw, 56px);
+  margin-bottom: 20px;
+}
+
+.cta-section p {
+  color: var(--text-secondary);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}

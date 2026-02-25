@@ -21,13 +21,63 @@ export default function ContactPage() {
         hearAbout: '',
     });
     const [submitted, setSubmitted] = useState(false);
+    const [formErrors, setFormErrors] = useState({});
+
+    const validateForm = () => {
+        const errors = {};
+
+        // name: minimum 2 characters
+        if (!formData.name || formData.name.trim().length < 2) {
+            errors.name = 'Ad en az 2 karakter olmalıdır.';
+        }
+
+        // email: valid email regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!formData.email || !emailRegex.test(formData.email.trim())) {
+            errors.email = 'Geçerli bir e-posta adresi giriniz.';
+        }
+
+        // phone: if provided, valid Turkish phone format (+90 or 05XX)
+        if (formData.phone && formData.phone.trim() !== '') {
+            const phoneClean = formData.phone.replace(/[\s\-()]/g, '');
+            const turkishPhoneRegex = /^(\+90|0090|90)?5\d{9}$|^05\d{9}$/;
+            if (!turkishPhoneRegex.test(phoneClean)) {
+                errors.phone = 'Geçerli bir Türk telefon numarası giriniz. (+90 5XX veya 05XX formatı)';
+            }
+        }
+
+        // projectType: must be selected
+        if (!formData.projectType) {
+            errors.projectType = 'Lütfen bir proje türü seçiniz.';
+        }
+
+        // message: minimum 20 characters
+        if (!formData.message || formData.message.trim().length < 20) {
+            errors.message = 'Mesaj en az 20 karakter olmalıdır.';
+        }
+
+        return errors;
+    };
 
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+
+        // Real-time validation: clear error when user fixes a field
+        if (formErrors[name]) {
+            const updatedErrors = { ...formErrors };
+            delete updatedErrors[name];
+            setFormErrors(updatedErrors);
+        }
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const errors = validateForm();
+        setFormErrors(errors);
+        if (Object.keys(errors).length > 0) {
+            return;
+        }
         setSubmitted(true);
     };
 
@@ -189,20 +239,23 @@ export default function ContactPage() {
 
                                     <form onSubmit={handleSubmit}>
                                         <div className="form-row">
-                                            <div className="form-group">
+                                            <div className={`form-group${formErrors.name ? ' has-error' : ''}`}>
                                                 <label htmlFor="name">Adınız *</label>
                                                 <input type="text" id="name" name="name" required placeholder="Adınız Soyadınız" value={formData.name} onChange={handleChange} />
+                                                {formErrors.name && <span className="form-error-message">{formErrors.name}</span>}
                                             </div>
-                                            <div className="form-group">
+                                            <div className={`form-group${formErrors.email ? ' has-error' : ''}`}>
                                                 <label htmlFor="email">E-posta *</label>
                                                 <input type="email" id="email" name="email" required placeholder="mail@sirketiniz.com" value={formData.email} onChange={handleChange} />
+                                                {formErrors.email && <span className="form-error-message">{formErrors.email}</span>}
                                             </div>
                                         </div>
 
                                         <div className="form-row">
-                                            <div className="form-group">
+                                            <div className={`form-group${formErrors.phone ? ' has-error' : ''}`}>
                                                 <label htmlFor="phone">Telefon</label>
                                                 <input type="tel" id="phone" name="phone" placeholder="+90 5XX XXX XX XX" value={formData.phone} onChange={handleChange} />
+                                                {formErrors.phone && <span className="form-error-message">{formErrors.phone}</span>}
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="company">Şirket / Marka</label>
@@ -211,7 +264,7 @@ export default function ContactPage() {
                                         </div>
 
                                         <div className="form-row">
-                                            <div className="form-group">
+                                            <div className={`form-group${formErrors.projectType ? ' has-error' : ''}`}>
                                                 <label htmlFor="projectType">Proje Türü *</label>
                                                 <select id="projectType" name="projectType" required value={formData.projectType} onChange={handleChange}>
                                                     <option value="">Seçiniz</option>
@@ -224,6 +277,7 @@ export default function ContactPage() {
                                                     <option value="redesign">Mevcut Site Yenileme</option>
                                                     <option value="diger">Diğer</option>
                                                 </select>
+                                                {formErrors.projectType && <span className="form-error-message">{formErrors.projectType}</span>}
                                             </div>
                                             <div className="form-group">
                                                 <label htmlFor="budget">Bütçe Aralığı</label>
@@ -262,9 +316,10 @@ export default function ContactPage() {
                                             </div>
                                         </div>
 
-                                        <div className="form-group">
+                                        <div className={`form-group${formErrors.message ? ' has-error' : ''}`}>
                                             <label htmlFor="message">Proje Detayları *</label>
                                             <textarea id="message" name="message" required placeholder="Projeniz hakkında kısaca bilgi verin. Ne tür bir web sitesine ihtiyacınız var? Hedefleriniz neler? Referans siteleriniz var mı?" value={formData.message} onChange={handleChange} />
+                                            {formErrors.message && <span className="form-error-message">{formErrors.message}</span>}
                                         </div>
 
                                         <button type="submit" className="cta-button large pulse" style={{ width: '100%', textAlign: 'center' }}>
@@ -308,6 +363,20 @@ export default function ContactPage() {
                     </div>
                 </div>
             </section>
+
+            <style>{`
+                .form-error-message {
+                    color: var(--accent-red);
+                    font-size: 12px;
+                    margin-top: 4px;
+                    display: block;
+                }
+                .form-group.has-error input,
+                .form-group.has-error select,
+                .form-group.has-error textarea {
+                    border-color: var(--accent-red);
+                }
+            `}</style>
         </>
     );
 }

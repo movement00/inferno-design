@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --bg-deep: #0a0a0a;
+  --bg-surface: #141414;
+  --bg-card: rgba(255, 255, 255, 0.03);
+
+  --accent-cyan: #00f2ff;
+  --accent-yellow: #ffe600;
+  --accent-red: #ff3d3d;
+
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+
+  --glow-cyan: 0 0 20px rgba(0, 242, 255, 0.4);
+  --glow-yellow: 0 0 20px rgba(255, 230, 0, 0.4);
+  --glow-red: 0 0 20px rgba(255, 61, 61, 0.4);
+  --border-radius: 2px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+.brand-text {
+  font-family: 'Archivo Black', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}

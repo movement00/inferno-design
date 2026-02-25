@@ -1,0 +1,61 @@
+/* ===== Floating Buttons ===== */
+.floating-buttons {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.float-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  font-size: 24px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.float-btn:hover {
+  transform: scale(1.1) translateY(-2px);
+}
+
+.float-btn.whatsapp {
+  background: #25D366;
+  color: #fff;
+}
+
+.float-btn.whatsapp:hover {
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+}
+
+.float-btn.back-to-top {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(0, 242, 255, 0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.float-btn.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.float-btn.back-to-top:hover {
+  background: var(--accent-cyan);
+  color: #000;
+  box-shadow: var(--glow-cyan);
+}

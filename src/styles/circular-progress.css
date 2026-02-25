@@ -1,0 +1,55 @@
+/* ===== Circular Progress ===== */
+.circular-stats {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+
+.circular-stat {
+  text-align: center;
+}
+
+.circular-stat svg {
+  width: 120px;
+  height: 120px;
+  transform: rotate(-90deg);
+}
+
+.circular-stat .track {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.05);
+  stroke-width: 6;
+}
+
+.circular-stat .fill {
+  fill: none;
+  stroke: var(--accent-cyan);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 314;
+  stroke-dashoffset: 314;
+  transition: stroke-dashoffset 2s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: drop-shadow(0 0 6px rgba(0, 242, 255, 0.4));
+}
+
+.circular-stat.in-view .fill {
+  /* stroke-dashoffset set dynamically via inline style */
+  transition: stroke-dashoffset 2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.circular-stat .circle-label {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 28px;
+  margin-top: 12px;
+  color: var(--text-primary);
+}
+
+.circular-stat .circle-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}

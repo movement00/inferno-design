@@ -1,0 +1,50 @@
+/* ===== Trust Logos ===== */
+.trust-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  padding: 40px 0;
+  opacity: 0.4;
+  transition: opacity 0.5s;
+}
+
+.trust-bar:hover {
+  opacity: 0.65;
+}
+
+.trust-bar span {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+}
+
+.trust-brand {
+  display: flex;
+  align-items: center;
+  transition: all 0.4s;
+}
+
+.trust-brand svg {
+  height: 28px;
+  width: auto;
+  color: var(--text-secondary);
+  transition: color 0.4s, transform 0.4s;
+}
+
+.trust-brand:hover svg {
+  color: var(--text-primary);
+  transform: scale(1.08);
+}
+
+@media (max-width: 768px) {
+  .trust-bar {
+    gap: 32px;
+  }
+  .trust-brand svg {
+    height: 22px;
+  }
+}

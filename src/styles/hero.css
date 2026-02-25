@@ -1,0 +1,66 @@
+/* ===== Hero Section ===== */
+header {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-top: 80px;
+}
+
+.hero-content {
+  max-width: 900px;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: clamp(48px, 8vw, 120px);
+  line-height: 0.9;
+  margin-bottom: 32px;
+}
+
+.text-cyan {
+  color: var(--accent-cyan);
+  text-shadow: var(--glow-cyan);
+  display: block;
+}
+
+.text-yellow {
+  color: var(--accent-yellow);
+  text-shadow: 0 0 10px rgba(255, 230, 0, 0.2);
+}
+
+.hero-subtitle {
+  font-size: clamp(18px, 2vw, 24px);
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin-bottom: 48px;
+  border-left: 4px solid var(--accent-yellow);
+  padding-left: 24px;
+}
+
+/* ===== Typewriter ===== */
+.typewriter-wrapper {
+  display: inline;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  background: var(--accent-cyan);
+  margin-left: 4px;
+  vertical-align: text-bottom;
+  animation: blink-cursor 0.8s step-end infinite;
+}
+
+@keyframes blink-cursor {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,221 @@
+/* ===== Blog Detail Page ===== */
+.blog-detail-hero {
+    padding: 120px 0 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.blog-detail-back {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    padding: 8px 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
+    margin-bottom: 32px;
+    display: inline-block;
+}
+
+.blog-detail-back:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.blog-detail-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.blog-detail-category {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+}
+
+.blog-detail-dot {
+    opacity: 0.3;
+}
+
+.blog-detail-title {
+    font-size: clamp(28px, 5vw, 48px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.blog-detail-excerpt {
+    font-size: clamp(16px, 2vw, 20px);
+    color: var(--text-secondary);
+    max-width: 700px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.blog-detail-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.blog-detail-author-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.blog-detail-author-name {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.blog-detail-author-role {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+/* Content */
+.blog-detail-content {
+    padding: 60px 0;
+}
+
+.blog-detail-container {
+    max-width: 760px;
+}
+
+.blog-detail-body {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+.blog-detail-heading {
+    font-size: clamp(20px, 3vw, 26px);
+    color: var(--text-primary);
+    margin: 40px 0 16px;
+}
+
+.blog-detail-paragraph {
+    margin-bottom: 20px;
+}
+
+.blog-detail-paragraph strong {
+    color: var(--text-primary);
+}
+
+.blog-detail-list {
+    margin: 16px 0 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.blog-detail-list li {
+    line-height: 1.7;
+}
+
+.blog-detail-list li strong {
+    color: var(--text-primary);
+}
+
+.blog-detail-list.ordered {
+    list-style-type: decimal;
+}
+
+.blog-detail-table-wrap {
+    overflow-x: auto;
+    margin: 24px 0;
+}
+
+.blog-detail-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.blog-detail-table th,
+.blog-detail-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.blog-detail-table th {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+.blog-detail-table td {
+    color: var(--text-secondary);
+}
+
+/* Tags & Share */
+.blog-detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.blog-detail-share {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.blog-detail-share-buttons button {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    padding: 8px 16px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s;
+}
+
+.blog-detail-share-buttons button:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* Related */
+.blog-detail-related {
+    padding: 80px 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.blog-detail-related h2 {
+    font-size: clamp(24px, 4vw, 36px);
+    margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    .blog-detail-hero {
+        padding: 100px 0 40px;
+    }
+
+    .blog-detail-body {
+        font-size: 16px;
+    }
+}

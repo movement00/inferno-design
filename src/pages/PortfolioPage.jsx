@@ -168,12 +168,14 @@ export default function PortfolioPage() {
                         <div className={`project-detail reveal ${i % 2 !== 0 ? 'reverse' : ''}`} key={project.id} style={{ transitionDelay: '0.1s' }}>
                             {/* Visual */}
                             <div className="project-visual" style={{ background: project.bgColor }}>
-                                <img
-                                    src={project.image}
-                                    alt={project.title}
-                                    className="project-image"
-                                    loading="lazy"
-                                />
+                                <div className="device-mockup">
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        className="project-image"
+                                        loading="lazy"
+                                    />
+                                </div>
                                 <div className="project-image-overlay"></div>
                                 <div className="project-tags-float">
                                     {project.tags.map((tag) => (

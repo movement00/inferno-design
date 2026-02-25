@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "contact": "Contact",
+    "cta": "Start Project"
+  },
+  "hero": {
+    "title1": "DESIGN WITH",
+    "title2": "FIRE.",
+    "subtitle": "We don't just build websites — we ignite brands in the digital world. Combining creative design with cutting-edge technology."
+  },
+  "common": {
+    "getQuote": "GET FREE QUOTE",
+    "viewPortfolio": "VIEW PORTFOLIO",
+    "contactUs": "CONTACT US",
+    "readMore": "Read More",
+    "close": "Close",
+    "subscribe": "Subscribe",
+    "send": "Send",
+    "loading": "Loading..."
+  },
+  "contact": {
+    "title": "TELL US ABOUT",
+    "titleHighlight": "YOUR PROJECT.",
+    "subtitle": "Fill out the form, and we'll get back to you with a custom strategy within 24 hours. First consultation is completely free.",
+    "formTitle": "START YOUR PROJECT",
+    "formSubtitle": "Fill out the form below, and we'll prepare a custom quote for you.",
+    "name": "Your Name",
+    "email": "Email",
+    "phone": "Phone",
+    "company": "Company / Brand",
+    "projectType": "Project Type",
+    "budget": "Budget Range",
+    "timeline": "Timeline",
+    "hearAbout": "How did you hear about us?",
+    "message": "Project Details",
+    "selectPlaceholder": "Select",
+    "successTitle": "MESSAGE RECEIVED!",
+    "successMessage": "We'll get back to you as soon as possible."
+  },
+  "footer": {
+    "cta": "Let's Ignite",
+    "ctaHighlight": "Your Brand.",
+    "contactTitle": "Contact",
+    "officeTitle": "Office",
+    "officeAddress1": "Levent, Istanbul",
+    "officeAddress2": "Tech Valley, No: 42",
+    "exploreTitle": "Explore",
+    "socialTitle": "Social",
+    "priceCalc": "Price Calculator",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "rights": "All rights reserved."
+  },
+  "theme": {
+    "dark": "Dark",
+    "light": "Light"
+  },
+  "lang": {
+    "tr": "Türkçe",
+    "en": "English"
+  }
+}
